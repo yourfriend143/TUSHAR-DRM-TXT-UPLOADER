@@ -30,7 +30,9 @@
 
 Firstly fill the value of api id,api hash,bot token in vars.py file. After it connect heroku from GitHub and then connect this repo. After it , go to in heroku setting,again fill the api id, api hash,bot token and then deploy. After deployment of this repo,again go to this deployment repo setting and add buildpack and again deploy.
 
-Buildpack - https://github.com/heroku/heroku-buildpack-activestorage-preview
+Buildpack - https://github.com/amivin/aria2-heroku.git
+https://github.com/amivin/aria2-heroku.git
+https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 
 
 
@@ -39,7 +41,11 @@ Buildpack - https://github.com/heroku/heroku-buildpack-activestorage-preview
 इसके बाद heroku setting में जाकर फिर से api id , api hash,bot token डालें। और फिर deploy कर दे।
 deploy करने के बाद उसी deploy वाली repo के setting में जाकर buildpack add करके again Deploy करें।
  
-Buildpack - https://github.com/heroku/heroku-buildpack-activestorage-preview
+Buildpack - https://github.com/amivin/aria2-heroku.git
+https://github.com/amivin/aria2-heroku.git
+https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
+
+## Add all (3) Buildpack in heroku.
 
 ## Deploy To Koyeb
 
