@@ -198,12 +198,21 @@ async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
         return
-
+    
     editable = await m.reply_text(f"⚡𝗦𝗘𝗡𝗗 𝗧𝗫𝗧 𝗙𝗜𝗟𝗘⚡")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))
+
+    if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
+        x = decrypt_file_txt(x)  # Decrypt the file
+        await input.delete(True)
+    else:
+        x = y 
+
+    path = f"./downloads/{m.chat.id}"
+  
     pdf_count = 0
     img_count = 0
     zip_count = 0
