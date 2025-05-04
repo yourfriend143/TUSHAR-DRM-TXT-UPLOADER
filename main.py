@@ -170,8 +170,14 @@ async def restart_handler(_, m):
     await m.reply_text("🔮Restarted🔮", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
   
-
-
+# List users command
+@bot.on_message(filters.command("userlist") & filters.user(SUDO_USERS))
+async def list_users(client: Client, msg: Message):
+    if SUDO_USERS:
+        users_list = "\n".join([f"User ID : `{user_id}`" for user_id in SUDO_USERS])
+        await msg.reply_text(f"SUDO_USERS :\n{users_list}")
+    else:
+        await msg.reply_text("No sudo users.")
 
 
 
