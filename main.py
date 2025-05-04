@@ -458,7 +458,39 @@ async def upload(bot: Client, m: Message):
                             os.remove(pdf_enc)
                             continue
                   
-                                  
+                elif ".pdf" in url:
+                    try:
+                        await asyncio.sleep(4)
+        # Replace spaces with %20 in the URL
+                        url = url.replace(" ", "%20")
+ 
+        # Create a cloudscraper session
+                        scraper = cloudscraper.create_scraper()
+
+        # Send a GET request to download the PDF
+                        response = scraper.get(url)
+
+        # Check if the response status is OK
+                        if response.status_code == 200:
+            # Write the PDF content to a file
+                            with open(f'{name}.pdf', 'wb') as file:
+                                file.write(response.content)
+
+            # Send the PDF document
+                            await asyncio.sleep(4)
+                            copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                            count += 1
+
+            # Remove the PDF file after sending
+                            os.remove(f'{name}.pdf')
+                        else:
+                            await m.reply_text(f"Failed to download PDF: {response.status_code} {response.reason}")
+
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        continue
+                      
                 elif ".pdf" in url:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
                     try:
                         if "cwmediabkt99" in url:  # if cw urls pdf is found if error then contact me with error
