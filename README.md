@@ -34,7 +34,7 @@ Buildpack :
 
 https://github.com/amivin/aria2-heroku.git
 
-https://github.com/amivin/aria2-heroku.git
+heroku/python
 
 https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 
