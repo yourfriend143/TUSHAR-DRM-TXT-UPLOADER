@@ -178,13 +178,9 @@ async def help_command(client: Client, msg: Message):
         "`/tushar` - Download and upload files (sudo)🎬\n\n"
         "`/restart` - Restart the bot🔮\n\n" 
         "`/stop` - Stop ongoing process🛑\n\n"
-        "`/cookies` - Upload cookies file🍪\n\n"
-        "`/e2t` - Edit txt file📝\n\n"
-        "`/yt2txt` - Create txt of yt playlist (owner)🗃️\n\n"
         "`/sudo add` - Add user or group or channel (owner)🎊\n\n"
         "`/sudo remove` - Remove user or group or channel (owner)❌\n\n"
-        "`/userlist` - List of sudo user or group or channel📜\n\n"
-       
+        "`/userlist` - List of sudo user or group or channel📜\n\n"  
     )
     await msg.reply_text(help_text)
 
