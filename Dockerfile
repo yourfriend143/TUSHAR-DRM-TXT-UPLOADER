@@ -32,7 +32,7 @@ RUN wget -q https://github.com/axiomatic-systems/Bento4/archive/v1.6.0-639.zip &
 
 # Install Python dependencies
 RUN pip3 install --no-cache-dir --upgrade pip \
-    && pip3 install --no-cache-dir --upgrade -r sainibots.txt \
+    && pip3 install --no-cache-dir --upgrade -r requirements.txt \
     && python3 -m pip install -U yt-dlp
 
 
