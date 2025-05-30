@@ -76,19 +76,19 @@ async def sudo_command(bot: Client, message: Message):
     try:
         args = message.text.split(" ", 2)
         if len(args) < 2:
-            await message.reply_text("**Usage:** `/sudo add2 <user_id>` or `/sudo remove2 <user_id>`")
+            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
             return
 
         action = args[1].lower()
         target_user_id = int(args[2])
 
-        if action == "add2":
+        if action == "add":
             if target_user_id not in SUDO_USERS:
                 SUDO_USERS.append(target_user_id)
                 await message.reply_text(f"**✅ User {target_user_id} added to sudo list.**")
             else:
                 await message.reply_text(f"**⚠️ User {target_user_id} is already in the sudo list.**")
-        elif action == "remove2":
+        elif action == "remove":
             if target_user_id == OWNER_ID:
                 await message.reply_text("**🚫 The owner cannot be removed from the sudo list.**")
             elif target_user_id in SUDO_USERS:
@@ -97,7 +97,7 @@ async def sudo_command(bot: Client, message: Message):
             else:
                 await message.reply_text(f"**⚠️ User {target_user_id} is not in the sudo list.**")
         else:
-            await message.reply_text("**Usage:** `/sudo add2 <user_id>` or `/sudo remove2 <user_id>`")
+            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
     except Exception as e:
         await message.reply_text(f"**Error:** {str(e)}")
 
