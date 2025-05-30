@@ -76,19 +76,19 @@ async def sudo_command(bot: Client, message: Message):
     try:
         args = message.text.split(" ", 2)
         if len(args) < 2:
-            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
+            await message.reply_text("**Usage:** `/sudo add2 <user_id>` or `/sudo remove2 <user_id>`")
             return
 
         action = args[1].lower()
         target_user_id = int(args[2])
 
-        if action == "add":
+        if action == "add2":
             if target_user_id not in SUDO_USERS:
                 SUDO_USERS.append(target_user_id)
                 await message.reply_text(f"**✅ User {target_user_id} added to sudo list.**")
             else:
                 await message.reply_text(f"**⚠️ User {target_user_id} is already in the sudo list.**")
-        elif action == "remove":
+        elif action == "remove2":
             if target_user_id == OWNER_ID:
                 await message.reply_text("**🚫 The owner cannot be removed from the sudo list.**")
             elif target_user_id in SUDO_USERS:
@@ -97,7 +97,7 @@ async def sudo_command(bot: Client, message: Message):
             else:
                 await message.reply_text(f"**⚠️ User {target_user_id} is not in the sudo list.**")
         else:
-            await message.reply_text("**Usage:** `/sudo add <user_id>` or `/sudo remove <user_id>`")
+            await message.reply_text("**Usage:** `/sudo add2 <user_id>` or `/sudo remove2 <user_id>`")
     except Exception as e:
         await message.reply_text(f"**Error:** {str(e)}")
 
@@ -105,11 +105,11 @@ async def sudo_command(bot: Client, message: Message):
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🇮🇳ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ🇮🇳" ,url=f"https://t.me/Tushar0125") ],
+                    InlineKeyboardButton("🇮🇳ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ🇮🇳" ,url=f"https://t.me/newstudent1885") ],
                     [
-                    InlineKeyboardButton("🔔ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ🔔" ,url="https://t.me/+EcyoxFsuS99mOWM1") ],
+                    InlineKeyboardButton("🔔ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ🔔" ,url="https://t.me/+dXRSrF1762o5NmRl") ],
                     [
-                    InlineKeyboardButton("🦋ғᴏʟʟᴏᴡ ᴜs🦋" ,url="https://t.me/+EcyoxFsuS99mOWM1")                              
+                    InlineKeyboardButton("🦋ғᴏʟʟᴏᴡ ᴜs🦋" ,url="https://t.me/+dXRSrF1762o5NmRl")                              
                 ],           
             ]
       )
@@ -147,17 +147,17 @@ caption = (
 )
     
 # Start command handler
-@bot.on_message(filters.command(["start"]))
+@bot.on_message(filters.command(["start2"]))
 async def start_command(bot: Client, message: Message):
     await bot.send_photo(chat_id=message.chat.id, photo=random_image_url, caption=caption, reply_markup=keyboard)
     
 # Stop command handler
-@bot.on_message(filters.command("stop"))
+@bot.on_message(filters.command("stop2"))
 async def restart_handler(_, m: Message):
     await m.reply_text("**𝗦𝘁𝗼𝗽𝗽𝗲𝗱**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command("restart"))
+@bot.on_message(filters.command("restart2"))
 async def restart_handler(_, m):
     if not is_authorized(m.from_user.id):
         await m.reply_text("**🚫 You are not authorized to use this command.**")
@@ -166,7 +166,7 @@ async def restart_handler(_, m):
     os.execl(sys.executable, sys.executable, *sys.argv)
   
 # List users command
-@bot.on_message(filters.command("userlist") & filters.user(SUDO_USERS))
+@bot.on_message(filters.command("userlist2") & filters.user(SUDO_USERS))
 async def list_users(client: Client, msg: Message):
     if SUDO_USERS:
         users_list = "\n".join([f"User ID : `{user_id}`" for user_id in SUDO_USERS])
@@ -180,17 +180,17 @@ async def list_users(client: Client, msg: Message):
 async def help_command(client: Client, msg: Message):
     help_text = (
         "`/start` - Start the bot⚡\n\n"
-        "`/tushar` - Download and upload files (sudo)🎬\n\n"
-        "`/restart` - Restart the bot🔮\n\n" 
-        "`/stop` - Stop ongoing process🛑\n\n"
+        "`/tushar2` or `/uplaod2` - Download and upload files (sudo)🎬\n\n"
+        "`/restart2` - Restart the bot🔮\n\n" 
+        "`/stop2` - Stop ongoing process🛑\n\n"
         "`/sudo add` - Add user or group or channel (owner)🎊\n\n"
         "`/sudo remove` - Remove user or group or channel (owner)❌\n\n"
-        "`/userlist` - List of sudo user or group or channel📜\n\n"  
+        "`/userlist2` - List of sudo user or group or channel📜\n\n"  
     )
     await msg.reply_text(help_text)
 
 # Upload command handler
-@bot.on_message(filters.command(["tushar"]))
+@bot.on_message(filters.command(["tushar2","upload2"]))
 async def upload(bot: Client, m: Message):
     if not is_authorized(m.chat.id):
         await m.reply_text("**🚫You are not authorized to use this bot.**")
@@ -287,9 +287,9 @@ async def upload(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     # Default credit message with link
-    credit = "️[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/Tushar0125)"
+    credit = "️[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/newstudent1885)"
     if raw_text3 == '1':
-        CR = '[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/Tushar0125)'
+        CR = '[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/newstudent1885)'
     elif raw_text3:
         try:
             text, link = raw_text3.split(',')
