@@ -6,25 +6,21 @@
 
 ## 😎 Credit
 
-🥳 Credit Goes To [Tushar](https://t.me/Tushar0125)
+🥳 Credit Goes To [Tushar](https://t.me/newstudent1885)
 
   
 ## 🔥 Commands
 
-- **`/start`**: ⚡ check bot is alive.
-- **`/tushar`**:  📁 upload txt file.
-- **`/stop`**: 🛑 stop ongoing process.
-- **`/restart`**: 🔮 restart the bot.
+- **`/start2`**: ⚡ check bot is alive.
+- **`/tushar2` or `upload2`**:  📁 upload txt file.
+- **`/stop2`**: 🛑 stop ongoing process.
+- **`/restart2`**: 🔮 restart the bot.
 - **`/sudo add`**: 🎊 add user or group or channel (owner).
 - **`/sudo remove`**: ❌ remove user or group or channel (owner).
-- **`/userlist`**: 📜 list of sudo user/group/channel.
+- **`/userlist2`**: 📜 list of sudo user/group/channel.
 - **`/help`**: 🎉 for help.
 
 
-## ✅ Pw,Cp & Appx Without Purchase Txt Extractor Bot
-
-🥳 Pw,Cp & Appx Without Purchase Txt Extractor Bot [Click Here](https://t.me/RealTxtExtractorRoBot)
- 
 
 ## Guide For Heroku Deployment 
 
@@ -46,7 +42,9 @@ https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 deploy करने के बाद उसी deploy वाली repo के setting में जाकर buildpack add करके again Deploy करें।
  
 Buildpack - https://github.com/amivin/aria2-heroku.git
+
 https://github.com/amivin/aria2-heroku.git
+
 https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git
 
 ## Add all (3) Buildpack in heroku.
