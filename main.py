@@ -48,12 +48,12 @@ async def show_random_emojis(message):
     return emoji_message
     
 # Define the owner's user ID
-OWNER_ID = 5840594311 # Replace with the actual owner's user ID
+OWNER_ID = 7795248617 # Replace with the actual owner's user ID
 
 # List of sudo users (initially empty or pre-populated)
-SUDO_USERS = [5840594311]
+SUDO_USERS = [7795248617]
 
-AUTH_CHANNEL = -1002595188554
+AUTH_CHANNEL = -1002790562309
 
 # Function to check if a user is authorized
 def is_authorized(user_id: int) -> bool:
@@ -105,11 +105,11 @@ async def sudo_command(bot: Client, message: Message):
 keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🇮🇳ʙᴏᴛ ᴍᴀᴅᴇ ʙʏ🇮🇳" ,url=f"https://t.me/newstudent1885") ],
+                    InlineKeyboardButton("𝐌𝐫 𝐚𝐧𝐝 𝐌𝐫𝐬 𝐁𝐡𝐚𝐫𝐝𝐰𝐚𝐣" ,url=f"https://t.me/rsbhardwaj143") ],
                     [
-                    InlineKeyboardButton("🔔ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ🔔" ,url="https://t.me/+dXRSrF1762o5NmRl") ],
+                    InlineKeyboardButton("𝐁𝐡𝐫𝐝𝐰𝐚𝐣 𝐣𝐢" ,url="https://t.me/rsbhardwaj143") ],
                     [
-                    InlineKeyboardButton("🦋ғᴏʟʟᴏᴡ ᴜs🦋" ,url="https://t.me/+dXRSrF1762o5NmRl")                              
+                    InlineKeyboardButton("🦋ғᴏʟʟᴏᴡ ᴜs🦋" ,url="https://t.me/rsbhardwaj143")                              
                 ],           
             ]
       )
@@ -287,9 +287,9 @@ async def upload(bot: Client, m: Message):
     raw_text3 = input3.text
     await input3.delete(True)
     # Default credit message with link
-    credit = "️[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/newstudent1885)"
+    credit = "️[𝐁𝐡𝐫𝐝𝐰𝐚𝐣](https://t.me/rsbhardwaj143)"
     if raw_text3 == '1':
-        CR = '[𝗧𝘂𝘀𝗵𝗮𝗿](https://t.me/newstudent1885)'
+        CR = '[𝐁𝐡𝐚𝐫𝐝𝐰𝐚𝐣](https://t.me/rsbhardwaj143)'
     elif raw_text3:
         try:
             text, link = raw_text3.split(',')
